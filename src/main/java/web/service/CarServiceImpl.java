@@ -24,8 +24,8 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Car> getCars(Integer count) {
         if(count == null || count >= listCars.size() ){
-            return listCars; // Возвращаем весь список, если count не указан или больше размера списка
+            return listCars;
         }
-        return listCars.subList(0,count); // Возвращаем подсписок  в зависимости от "count" - subList(fromIndex, toIndex))
+        return listCars.subList(0,count);
     }
 }

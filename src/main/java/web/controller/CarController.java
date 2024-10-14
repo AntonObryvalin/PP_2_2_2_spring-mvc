@@ -12,19 +12,16 @@ import java.util.List;
 
 @Controller
 public class CarController {
+    private final CarService carService;
 
-    private final CarService carService; // Сервис для работы с автомобилями
-
-    // Инъекция CarService через конструктор
     public CarController(CarService carService) {
         this.carService = carService;
     }
-
     @GetMapping("/cars")
     public String showCars(@RequestParam(value = "count", required = false) Integer count, Model model) {
-        List<Car> cars = carService.getCars(count); // Получаем список машин из сервиса
-        model.addAttribute("cars", cars); // Добавляем список машин в модель
-        return "cars"; // Возвращаем имя представления
+        List<Car> cars = carService.getCars(count);
+        model.addAttribute("cars", cars);
+        return "cars";
     }
 
 }
