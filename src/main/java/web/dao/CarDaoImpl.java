@@ -10,7 +10,6 @@ import java.util.List;
 public class CarDaoImpl implements CarDao {
 
     private final List<Car> listCars = new ArrayList<>(); // // Список автомобилей
-
     // Инициализация списка из 5 машин
     {
         listCars.add(new Car(1, "Red", "AUDI"));
